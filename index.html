@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+    <body>
+<head>
+    <meta name="viewport" content="device-width, initial-scale=1.0">
+<title>Wesley Siwela</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Cormorant+Garamond&family=Noto+Serif+JP:wght@300&family=Passions+Conflict&family=Poiret+One&family=Sevillana&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Acme&family=Corinthia&family=Dancing+Script&family=Handlee&family=Lobster&family=Noto+Sans+Lao+Looped&family=Noto+Serif+JP:wght@300&family=Raleway&family=Tiro+Tamil&display=swap" rel="stylesheet">
+
+    <header>
+       
+        <nav>
+            <a href="index.html"> </a>
+
+            <div class="P-links" id="Plinks">
+              <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="https://www.linkedin.com/in/wesley-siwela-43a048259/">LinkedIn</a></li>
+                    <li><a href="https://github.com/weso360">GitHub</a></li>
+                    <li><a href="https://www.codecademy.com/profiles/W3sley-C0d3">Codecademy</a></li>
+                   
+                </ul>
+
+            </div>
+
+            <i class="fa fa-bars"  onclick="showMenu()"></i>
+
+        </nav>
+<div class="text-box">
+  <h1>Wesley Siwela</h1>
+  <br>  <br>
+<div class="gb">  
+  
+
+  <p>I am a junior developer based in Oxford who is dedicated to improving his skillset. I enjoy learning, writing code and building web and mobile applications. <br>I have a good foundational knowledge and understanding of Web development languages such as HTML, CSS, and JavaScript.<br><br>
+    <span>The Journey Continues...<i class="fa-solid fa-meteor"></i></span>
+    </p>
+      <a id="image" href="port.html"> <img src="images/mv.png"></a>
+</div>
+
+
+
+<div class="container">
+    <div class="bottom"></div>
+    <div class="cover cut"></div>
+    <div class="text-container">
+      <div class="text text-dark"><a href="#con">Explore <i class="fa fa-arrow-down"></i></a></div>
+    </div>
+    <div class="text-container cut">
+      <div class="text"><a href="#con">Explore <i class="fa fa-arrow-down"></i></a></div>
+    </div>
+   <a href="#con"><div class="overlay"></div></a> 
+  </div>
+
+  <!--section 2-->
+  
+
+
+  <div id="based">
+    <section class="based">
+    
+    
+        <div id="con" class="cont">
+
+            <h1 class="heady" data-target-resolver></h1>
+        <script>const resolver = {
+            resolve: function resolve(options, callback) {
+              // The string to resolve
+              const resolveString = options.resolveString || options.element.getAttribute('data-target-resolver');
+              const combinedOptions = Object.assign({}, options, { resolveString: resolveString });
+          
+              function getRandomInteger(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+              };
+          
+              function randomCharacter(characters) {
+                return characters[getRandomInteger(0, characters.length - 1)];
+              };
+          
+              function doRandomiserEffect(options, callback) {
+                const characters = options.characters;
+                const timeout = options.timeout;
+                const element = options.element;
+                const partialString = options.partialString;
+          
+                let iterations = options.iterations;
+          
+                setTimeout(() => {
+                  if (iterations >= 0) {
+                    const nextOptions = Object.assign({}, options, { iterations: iterations - 1 });
+          
+                    // Ensures partialString without the random character as the final state.
+                    if (iterations === 0) {
+                      element.textContent = partialString;
+                    } else {
+                      // Replaces the last character of partialString with a random character
+                      element.textContent = partialString.substring(0, partialString.length - 1) + randomCharacter(characters);
+                    }
+          
+                    doRandomiserEffect(nextOptions, callback);
+                  } else if (typeof callback === "function") {
+                    callback();
+                  }
+                }, options.timeout);
+              };
+          
+              function doResolverEffect(options, callback) {
+                const resolveString = options.resolveString;
+                const characters = options.characters;
+                const offset = options.offset;
+                const partialString = resolveString.substring(0, offset);
+                const combinedOptions = Object.assign({}, options, { partialString: partialString });
+          
+                doRandomiserEffect(combinedOptions, () => {
+                  const nextOptions = Object.assign({}, options, { offset: offset + 1 });
+          
+                  if (offset <= resolveString.length) {
+                    doResolverEffect(nextOptions, callback);
+                  } else if (typeof callback === "function") {
+                    callback();
+                  }
+                });
+              };
+          
+              doResolverEffect(combinedOptions, callback);
+            } };
+          
+          
+          /* Some GLaDOS quotes from Portal 2 chapter 9: The Part Where He Kills You
+           * Source: http://theportalwiki.com/wiki/GLaDOS_voice_lines#Chapter_9:_The_Part_Where_He_Kills_You
+           */
+          const strings = [
+         'Hi! My Name Is..','Wesley!','Welcome!','To My Portfolio!'];
+          
+          
+          let counter = 0;
+          
+          const options = {
+            // Initial position
+            offset: 0,
+            // Timeout between each random character
+            timeout: 17,
+            // Number of random characters to show
+            iterations: 10,
+            // Random characters to pick from
+            characters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'x', 'y', 'x'],
+            // String to resolve
+            resolveString: strings[counter],
+            // The element
+            element: document.querySelector('[data-target-resolver]') };
+          
+          
+          // Callback function when resolve completes
+          function callback() {
+            setTimeout(() => {
+              counter++;
+          
+              if (counter >= strings.length) {
+                counter = 0;
+              }
+          
+              let nextOptions = Object.assign({}, options, { resolveString: strings[counter] });
+              resolver.resolve(nextOptions, callback);
+            }, 1000);
+          }
+          
+          resolver.resolve(options, callback);</script>  
+    </div>
+        <h1>Projects</h1>
+    
+    
+    
+    
+    <p>Here are 3 my most recently completed, body's of work!</p>
+    
+    
+        
+    
+        <div class="row">
+
+          <div class="based-col">
+            <img src="images/teacozy.png">
+            <div class="layer">
+                <a href="https://weso360.github.io/cozytea.github.io/"><h3>Tea Cozy</h3></a>
+    
+    
+            </div>
+        </div>
+    
+            <div class="based-col">
+              <img src="images/slc.png">
+              <div class="layer">
+              <a href="https://weso360.github.io/projectWS.github.io/"><h3>SLC Careers</h3></a>
+      
+      
+          </div>
+
+            </div>
+          
+            <a href=""><div class="based-col"></a>
+            <img src="images/broad.png">
+            <div class="layer">
+                <a href="https://weso360.github.io/broadway.github.io/"><h3>Broadway</h3></a>
+
+    
+    
+        </div>
+        
+      
+            
+        </div>
+    
+    
+    
+        </section>
+
+
+
+
+
+  
+  
+  
+  <!--form-->
+
+
+
+
+  </header>
+  <section class="contact">
+    <div class="contact">
+
+
+
+
+
+    <form action="https://formsubmit.co/djpotsi@gmail.com" method="post" class="details" id="details">
+        <input type="hidden" name="_captcha" value="false">
+
+
+    <section class="name">
+        <label for="name">NAME</label>
+        <br>
+              <input type="text" name="name" id="details"required maxlength="15">
+      </section>
+      <section class="number">
+        <label for="name">EMAIL</label>
+        <br>
+              <input type="text" name="number" id="details" required>
+
+      </section>
+      <section class="subject">
+        <label for="subject"></label>
+        <br>
+             	
+
+     <input type="hidden" name="subject"> 	
+                    <section class="message">
+                        <label for="message">MESSAGE</label>
+      </section>
+                        <br>
+        
+                             <a href="https://weso360.github.io/projectWS.github.io/submit.html"></a> <textarea id="messagea" name="message" cols="30" rows="5"></textarea>
+                             <br>
+<button type="submit">Send</button>
+<input type="hidden" name="_next" value="https://weso360.github.io/projectWS.github.io/submit.html">
+      </section>
+    </form>
+    
+
+
+
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+<div id='stars'></div>
+<div id='stars2'></div>
+<div id='stars3'></div>
+<div id='title'>
+  <span>
+    ___
+  </span>
+  <br>
+  <span>
+    GET IN TOUCH </span>
+</div>
+
+
+
+
+
+<h4>Wesley Siwela  <i class="fa-brands fa-teamspeak"></i><br>
+</h4>
+</div>
+
+
+</section>
+
+
+<!--footer vibes-->
+
+
+
+
+
+<!--JS interraction feature-->
+
+
+
+
+<script>
+
+    var Plink = document.getElementedById("Plinks");
+        function showMenu(){
+        Plinks.style.right = "0";
+    }
+        function hideMenu(){
+        Plinks.style.right = "-200px";
+    }
+
+
+
+</script>
+
+
+
+</body>
+</html>
